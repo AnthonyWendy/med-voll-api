@@ -21,7 +21,6 @@ public class Doctor {
     private String name;
     private String email;
     private String crm;
-    @NotBlank
     private String phone;
     @Enumerated(EnumType.STRING)
     private Specialty specialty;
@@ -35,5 +34,17 @@ public class Doctor {
         this.specialty = dados.specialty();
         this.address = new AddressDoctor(dados.address());
         this.phone = dados.phone();
+    }
+
+    public void updateInformation(DataUpdateDoctor dates) {
+        if(dates.name() != null){
+            this.name = dates.name();
+        }
+        if(dates.phone() != null){
+            this.phone = dates.phone();
+        }
+        if(dates.address() != null){
+            this.address.updateInformation(dates.address());
+        }
     }
 }

@@ -30,4 +30,29 @@ public class AddressDoctor {
         this.number = address.number();
         this.complement = address.complement();
     }
+
+    public void updateInformation(Address dates) {
+        if(dates.street() != null){
+            this.street = dates.street();
+        }
+        if(dates.neighborhood() != null){
+            this.neighborhood = dates.neighborhood();
+        }
+        if(dates.zip() != null){
+            this.zip = dates.zip();
+        }
+        if(dates.city() != null){
+            this.city = dates.city();
+        }
+        if(dates.state() != null){
+            this.state = dates.state();
+        }
+        if(dates.number() != null){
+            this.number = dates.number();
+        }
+        if(dates.complement() != null){
+            this.complement = dates.complement();
+        }
+
+    }
 }
